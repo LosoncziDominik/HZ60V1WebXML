@@ -9,7 +9,7 @@
         </idopont>
         <helyszin>E1</helyszin>
         <oktato>Dr. Kovacs Szilveszter Dezső</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
     <ora id="2" tipus="eloadas">
         <targy>Web technologiak 1.</targy>
@@ -20,7 +20,7 @@
         </idopont>
         <helyszin>E5</helyszin>
         <oktato>Dr. Agárdi Anita</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
     <ora id="3" tipus="eloadas">
         <targy>Mesterséges intelligencia alapok</targy>
@@ -31,20 +31,9 @@
         </idopont>
         <helyszin>E32</helyszin>
         <oktato>Kunné Dr. Tamás Judit</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
     <ora id="4" tipus="gyakorlat">
-        <targy>Mesterséges intelligencia alapok</targy>
-        <idopont>
-            <nap>Kedd</nap>
-            <tol>12:00</tol>
-            <ig>13:00</ig>
-        </idopont>
-        <helyszin>E32</helyszin>
-        <oktato>Kunné Dr. Tamás Judit</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
-    </ora>
-    <ora id="5" tipus="gyakorlat">
         <targy>Mesterséges intelligencia alapok</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -53,9 +42,9 @@
         </idopont>
         <helyszin>E32</helyszin>
         <oktato>Kunné Dr. Tamás Judit</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="6" tipus="elmélet">
+    <ora id="5" tipus="előadás">
         <targy>Algoritmusok és vizsgálatuk</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -64,9 +53,9 @@
         </idopont>
         <helyszin>E30</helyszin>
         <oktato>Dr. Házy Attila</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="7" tipus="gyakorlat">
+    <ora id="6" tipus="gyakorlat">
         <targy>Algoritmusok és vizsgálatuk</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -75,20 +64,9 @@
         </idopont>
         <helyszin>E30</helyszin>
         <oktato>Dr. Házy Attila</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="8" tipus="eloadas">
-        <targy>Webes adatkezelő környezetek</targy>
-        <idopont>
-            <nap>Szerda</nap>
-            <tol>08:00</tol>
-            <ig>10:00</ig>
-        </idopont>
-        <helyszin>4. előadó</helyszin>
-        <oktato>Dr. Horváth Mária</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
-    </ora>
-     <ora id="9" tipus="eloadas">
+     <ora id="7" tipus="eloadas">
         <targy>Webes adatkezelő környezetek</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -97,9 +75,9 @@
         </idopont>
         <helyszin>E31</helyszin>
         <oktato>Prof. Dr. Kovács László</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="10" tipus="gyakorlat">
+    <ora id="8" tipus="gyakorlat">
         <targy>Webes adatkezelő környezetek</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -108,10 +86,10 @@
         </idopont>
         <helyszin>In 103</helyszin>
         <oktato>Dr. Bednarik László</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
 
-    <ora id="11" tipus="gyakorlat">
+    <ora id="9" tipus="gyakorlat">
         <targy>Web technológiák 1.</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -120,10 +98,10 @@
         </idopont>
         <helyszin>In 101</helyszin>
         <oktato>Dr. Bednarik László</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
 
-    <ora id="12" tipus="elmélet">
+    <ora id="10" tipus="előadás">
         <targy>Vállalati információs rendszerek fejlesztése</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -132,9 +110,9 @@
         </idopont>
         <helyszin>In 103</helyszin>
         <oktato>Dr. Sasvári Péter</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="13" tipus="gyakorlat">
+    <ora id="11" tipus="gyakorlat">
     <targy>Vállalati információs rendszerek fejlesztése</targy>
         <idopont>
             <nap>Szerda</nap>
@@ -143,9 +121,9 @@
         </idopont>
         <helyszin>In 103</helyszin>
         <oktato>Dr. Sasvári Péter</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="14" tipus="gyakorlat">
+    <ora id="12" tipus="gyakorlat">
     <targy> Számítógép hálózat</targy>
         <idopont>
             <nap>Csütörtök</nap>
@@ -154,7 +132,7 @@
         </idopont>
         <helyszin>E1</helyszin>
         <oktato>Dr. Szilveszter Dezső</oktato>
-        <szak>Program tervező informatikus Bsc</szak>
+        <szak>Programtervező informatikus Bsc</szak>
     </ora>
 </XY_orarend>
    

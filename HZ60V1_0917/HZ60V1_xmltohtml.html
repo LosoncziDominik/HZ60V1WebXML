@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Órarend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0077cc;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .eloadas {
+            color: #0057b8;
+            font-weight: bold;
+        }
+        .gyakorlat {
+            color: #3c763d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Órarend</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Típus</th>
+                <th>Tantárgy</th>
+                <th>Nap</th>
+                <th>Kezdés</th>
+                <th>Befejezés</th>
+                <th>Helyszín</th>
+                <th>Oktató</th>
+                <th>Szak</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="eloadas">előadás</td>
+                <td>Számítógép hálózatok</td>
+                <td>Hétfő</td>
+                <td>8:00</td>
+                <td>10:00</td>
+                <td>E1</td>
+                <td>Dr. Kovacs Szilveszter Dezső</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="eloadas">előadás</td>
+                <td>Web technológiák 1.</td>
+                <td>Hétfő</td>
+                <td>10:00</td>
+                <td>12:00</td>
+                <td>E5</td>
+                <td>Dr. Agárdi Anita</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="eloadas">előadás</td>
+                <td>Mesterséges intelligencia alapok</td>
+                <td>Kedd</td>
+                <td>10:00</td>
+                <td>12:00</td>
+                <td>E32</td>
+                <td>Kunné Dr. Tamás Judit</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="gyakorlat">gyakorlat</td>
+                <td>Mesterséges intelligencia alapok</td>
+                <td>Kedd</td>
+                <td>12:00</td>
+                <td>14:00</td>
+                <td>E32</td>
+                <td>Kunné Dr. Tamás Judit</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="eloadas">előadás</td>
+                <td>Algoritmusok és vizsgálatuk</td>
+                <td>Kedd</td>
+                <td>14:00</td>
+                <td>16:00</td>
+                <td>E30</td>
+                <td>Dr. Házy Attila</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="gyakorlat">gyakorlat</td>
+                <td>Algoritmusok és vizsgálatuk</td>
+                <td>Kedd</td>
+                <td>16:00</td>
+                <td>18:00</td>
+                <td>E30</td>
+                <td>Dr. Házy Attila</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="eloadas">előadás</td>
+                <td>Webes adatkezelő környezetek</td>
+                <td>Szerda</td>
+                <td>08:00</td>
+                <td>10:00</td>
+                <td>E31</td>
+                <td>Prof. Dr. Kovács László</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="gyakorlat">gyakorlat</td>
+                <td>Webes adatkezelő környezetek</td>
+                <td>Szerda</td>
+                <td>10:00</td>
+                <td>12:00</td>
+                <td>In 103</td>
+                <td>Dr. Bednarik László</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td class="gyakorlat">gyakorlat</td>
+                <td>Web technológiák 1.</td>
+                <td>Szerda</td>
+                <td>12:00</td>
+                <td>14:00</td>
+                <td>In 101</td>
+                <td>Dr. Bednarik László</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="eloadas">előadás</td>
+                <td>Vállalati információs rendszerek fejlesztése</td>
+                <td>Szerda</td>
+                <td>14:00</td>
+                <td>16:00</td>
+                <td>In 103</td>
+                <td>Dr. Sasvári Péter</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td class="gyakorlat">gyakorlat</td>
+                <td>Vállalati információs rendszerek fejlesztése</td>
+                <td>Szerda</td>
+                <td>18:00</td>
+                <td>20:00</td>
+                <td>In 103</td>
+                <td>Dr. Sasvári Péter</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td class="gyakorlat">gyakorlat</td>
+                <td>Számítógép hálózat</td>
+                <td>Csütörtök</td>
+                <td>10:00</td>
+                <td>12:00</td>
+                <td>E1</td>
+                <td>Dr. Szilveszter Dezső</td>
+                <td>Programtervező informatikus Bsc</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
