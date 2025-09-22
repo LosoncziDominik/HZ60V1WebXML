@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<konferencia>
+    <cim>A Turing-gép</cim>
+    <hallgatók>
+        <hallgató>
+            <név>Nemes Katalin</név>
+            <lakcím>Miskolc, Kossuth Lajos út 33.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Tibor László</név>
+            <lakcím> Alsózsolca, Malom utca 14.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Nagy Imre Károly</név>
+            <lakcím>Szentistvánbaksa, Fő út 40.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Hlad Kitti</név>
+            <lakcím>Homrogd, Bogár utca 5.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Tóth Mihály</név>
+            <lakcím>Balaton, Árpád út 9.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Mikó Attila</név>
+            <lakcím>Miskolc, Teleki utca 112.</lakcím>
+        </hallgató>
+    </hallgatók>
+    <helyszín>Miskolc Egyetem, A/4 E1</helyszín>
+    <előadó>
+        <név>Dr. Ádám Mátyás</név>
+        <adószám>4953264946</adószám>
+        <lakcím>Miskolc, Lázár út 44.</lakcím>
+    </előadó>
+    <dátum>2025.12.04</dátum>
+</konferencia>
