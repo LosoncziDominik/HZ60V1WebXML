@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT LD_orarend  (ora)*>
+<!ELEMENT ora (targy+,idopont+,helyszin+,oktato+,szak+)>
+<!ELEMENT idopont (nap+,tol+,ig+)>
+<!ATTLIST ora id ID #REQUIRED>
+<!ATTLIST ora tipus (eloadas | gyakorlat) #REQUIRED>
+<!ELEMENT targy (#PCDATA)>
+<!ELEMENT idopont (nap, tol, ig)>

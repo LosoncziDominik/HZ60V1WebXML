@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mozi SYSTEM "HZ60V1_mozi.dtd">
+
+<?xml version="1.0" encoding="UTF-8"?>
+<mozi>
+    <film id="txn_nxm_2jb" mufaj="horror">
+        <rendezo id="nzk_4xm_2jb" nev="alex" />
+        <szinesz id="u5g_4xm_2jb" nev="Madison_Ivy" />
+        <szinesz id="a" nev="Ismeretlen" />
+        <iro id="trv_4xm_2jb" />
+    </film>
+    <film id="txn_nxm_3jb" mufaj="thriller">
+        <rendezo id="nzk_4xm_3jb" nev="mike"/>
+        <rendezo id="nzk_4xm_4jb" nev="bob"/>
+        <szinesz id="x1" nev="John Doe"/>
+        <iro id="txv_4xm_3jb" />
+        <iro id="txv_4xm_4jb" />
+    </film>
+</mozi>
