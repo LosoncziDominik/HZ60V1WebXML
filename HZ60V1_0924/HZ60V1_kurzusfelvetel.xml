@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<HZ60V1_kurzusfelvetel tanev="" egyetem="">
+    <hallgató>
+        <hallgato>
+            <hnev></hnev>
+            <szulnev></szulnev>
+            <szak></szak>
+        </hallgato>
+    </hallgató>
+    <kurzusok>
+        <kurzus id="" jovahagyas="" nyelv="">
+            <kurzusnev></kurzusnev>
+            <kredit></kredit>
+            <hely></hely>
+            <idopont></idopont>
+            <oktato></oktato>
+        </kurzus>
+        <kurzus id="" jovahagyas="" nyelv="">
+            <kurzusnev></kurzusnev>
+            <kredit></kredit>
+            <hely></hely>
+            <idopont></idopont>
+            <oktato></oktato>
+        </kurzus>
+        <kurzus id="">
+            <kurzusnev></kurzusnev>
+            <kredit></kredit>
+            <hely></hely>
+            <idopont></idopont>
+            <oktato></oktato>
+        </kurzus>
+        <kurzus id="">
+            <kurzusnev></kurzusnev>
+            <kredit></kredit>
+            <hely></hely>
+            <idopont></idopont>
+            <oktato></oktato>
+            <oraado></oraado>
+        </kurzus>
+        <kurzus id="">
+            <kurzusnev></kurzusnev>
+            <kredit></kredit>
+            <hely></hely>
+            <idopont></idopont>
+            <oktato></oktato>
+            <oraado></oraado>
+        </kurzus>
+        <kurzus id="">
+            <kurzusnev></kurzusnev>
+            <kredit></kredit>
+            <hely></hely>
+            <idopont></idopont>
+            <oktato></oktato>
+        </kurzus>
+
+    </kurzusok>
+</HZ60V1_kurzusfelvetel>        

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!ELEMENT mozi (film)*>
-<!ELEMENT film (rendezi+,szinesz+,iro+)>
+<!ELEMENT film (rendezo+,szinesz+,iro+)>
 <!ATTLIST film id ID #REQUIRED>
 <!ATTLIST film mufaj (horror | romantikus | thriller) "horror">
 
 <!ELEMENT rendezo EMPTY>
 <!ATTLIST rendezo id ID #REQUIRED>
-<!ATTLIST rendezo nev CDATA #IMPLEMENTED>
+<!ATTLIST rendezo nev CDATA "asd">
 
 <!ELEMENT szinesz EMPTY>
 <!ATTLIST szinesz id ID #REQUIRED>
-<!ATTLIST szinesz nev CDATA #IMPLEMENTED>
+<!ATTLIST szinesz nev CDATA "asd">
 
 <!ELEMENT iro EMPTY>
 <!ATTLIST iro id ID #REQUIRED>
