@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="vendeglatas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="etterem" type="etteremTipus"></xs:element>
+                <xs:element name="foszakacs" type="foszakacsTipus"></xs:element>
+                <xs:element name="szakacs" type="szakacsTipus"></xs:element>
+                <xs:element name="gyakornok" type="gyakornokTipus"></xs:element>
+                <xs:element name="vendeg" type="vendegTipus"></xs:element>
+                <xs:element name="rendeles" type="rendelesTipus"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="ekod" type="xs:ID"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Komplex Tipusok-->
+
+    <xs:complexType name="etteremTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"></xs:element>
+            <xs:element name="cim" type="cimTipus"></xs:element>
+            <xs:element name="csillag" type="xs:int"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="foszakacsTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"></xs:element>
+            <xs:element name="eletkor" type="xs:int"></xs:element>
+            <xs:element name="vegzettseg" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="szakacsTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"></xs:element>
+            <xs:element name="reszleg" type="xs:string"></xs:element>
+            <xs:element name="vegzettseg" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="gyakornokTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"></xs:element>
+            <xs:element name="reszleg" type="xs:string"></xs:element>
+            <xs:element name="vegzettseg" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:key name="etterem_kulcs">
+        <xs:selector xpath="szakacs"/>
+        <xs:field xpath="@gykod"/>
+    </xs:key>
+</xs:schema>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Etterem-->
+
+    <etterem ekod="e1"> 
+        <nev>Büfé</nev>
+        <cim>
+            <varos>Szeged</varos>
+            <utca>Kossuth utca</utca>
+            <hazszam>8</hazszam>
+        </cim>
+        <csillag>3</csillag>
+    </etterem>
+
+    <etterem ekod="e2">
+        <nev>Vadász</nev>
+        <cim>
+            <varos>Budapest</varos>
+            <utca>Alkotmány út</utca>
+            <hazszam>120</hazszam>
+        </cim>
+        <csillag></csillag>
+    </etterem>
+
+    <!-- Foszakacs-->
+
+    <foszakacs fkod="f1" e_f="e1">
+        <nev>Nagy Béla</nev>
+        <eletkor>42</eletkor>
+        <vegzettseg>Szakács mesteri képzés</vegzettseg>
+    </foszakacs>
+
+    <foszakacs fkod="f2" e_f="e2">
+        <nev>Takács Tivadar</nev>
+        <eletkor>34</eletkor>
+        <vegzettseg>Szakács mesteri képzés</vegzettseg>
+    </foszakacs>
+
+    <!-- Szakacs-->
+
+    <szakacs szkod="sz1" e_sz="e2">
+        <nev>Tóth Ferenc</nev>
+        <reszleg>mosogató</reszleg>
+        <vegzettseg>érettségi</vegzettseg>
+    </szakacs>
+
+    <szakacs szkod="sz2" e_sz="e1">
+        <nev>Mihály Leander</nev>
+        <reszleg>séf</reszleg>
+        <vegzettseg>Kukta képzés</vegzettseg>
+    </szakacs>
+
+    <szakacs szkod="sz3" e_sz="e1">
+        <nev>Nagy Árpi</nev>
+        <reszleg>séf segéd</reszleg>
+        <vegzettseg>Kukta képzés</vegzettseg>
+    </szakacs>
+
+    <!-- Gyakornok-->
+
+    <gyakornok gykod="gy1" e_gy="e1">
+        <nev> Lakatos Tihamér</nev>
+        <gyakorlat>
+            <kezdet>2022.01.01</kezdet>
+            <idotartam>3 hónap</idotartam>
+        </gyakorlat>
+        <muszak>Délelőtt</muszak>
+    </gyakornok>
+
+    <gyakornok gykod="gy2" e_gy="e2">
+        <nev>Farkas Farkas</nev>
+        <gyakorlat>
+            <kezdet>2020.06.10</kezdet>
+            <idotartam>4 hónap</idotartam>
+        </gyakorlat>
+        <muszak>Délután</muszak>
+    </gyakornok>
+
+    <!-- Vendeg-->
+
+    <vendeg vkod="v1" rkod="r1">
+        <nev>Szűcs Dóra</nev>
+        <eletkor>23</eletkor>
+        <cim>
+            <varos>Budapest</varos>
+            <utca>Arató utca</utca>
+            <hazszam>12</hazszam>
+        </cim>
+    </vendeg>
+
+    <vendeg vkod="v2" rkod="r2">
+        <nev>Réti Ádám</nev>
+        <eletkor>33</eletkor>
+        <cim>
+            <varos>Taktaharkány</varos>
+            <utca>Fő út</utca>
+            <hazszam>100</hazszam>
+        </cim>
+    </vendeg>
+
+    <vendeg vkod="v3" rkod="r3">
+        <nev>Fülöp Loránt</nev>
+        <eletkor>20</eletkor>
+        <cim>
+            <varos>Eger</varos>
+            <utca>Dobó utca</utca>
+            <hazszam>43</hazszam>
+        </cim>
+    </vendeg>
+
+    <!-- Rendeles-->
+
+    <rendeles rkod="r1" e_r="e1">
+        <osszeg>2000</osszeg>
+        <etel>Toltott kaposzta</etel>
+    </rendeles>
+
+    <rendeles rkod="r2" e_r="e1">
+        <osszeg>2500</osszeg>
+        <etel>Makos guba</etel>
+    </rendeles>
+
+    <rendeles rkod="r3" e_r="e2">
+        <osszeg>1400</osszeg>
+        <etel>Húsleves</etel>
+    </rendeles>
+
+    <rendeles rkod="r4" e_r="e2">
+        <osszeg>3000</osszeg>
+        <etel>Kaviár</etel>
+    </rendeles>
+</vendeglatas>
