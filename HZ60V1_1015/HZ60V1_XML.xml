@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="HZ60V1_XMLSchema.xsd">
 
     <!-- Etterem-->
 
@@ -20,7 +20,7 @@
             <utca>Alkotmány út</utca>
             <hazszam>120</hazszam>
         </cim>
-        <csillag></csillag>
+        <csillag>2</csillag>
     </etterem>
 
     <!-- Foszakacs-->
@@ -79,7 +79,7 @@
 
     <!-- Vendeg-->
 
-    <vendeg vkod="v1" rkod="r1">
+    <vendeg vkod="v1" r_v="r1">
         <nev>Szűcs Dóra</nev>
         <eletkor>23</eletkor>
         <cim>
@@ -89,7 +89,7 @@
         </cim>
     </vendeg>
 
-    <vendeg vkod="v2" rkod="r2">
+    <vendeg vkod="v2" r_v="r2">
         <nev>Réti Ádám</nev>
         <eletkor>33</eletkor>
         <cim>
@@ -99,7 +99,7 @@
         </cim>
     </vendeg>
 
-    <vendeg vkod="v3" rkod="r3">
+    <vendeg vkod="v3" r_v="r3">
         <nev>Fülöp Loránt</nev>
         <eletkor>20</eletkor>
         <cim>

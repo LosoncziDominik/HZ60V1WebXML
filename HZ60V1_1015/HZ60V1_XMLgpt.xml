@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vendeglatas>
+
+    <!-- ===== ÉTTEREMEK ===== -->
+    <etterem ekod="E1">
+        <nev>Arany Hal Étterem</nev>
+        <cim>
+            <varos>Szeged</varos>
+            <utca>Kossuth utca</utca>
+            <hazszam>8</hazszam>
+        </cim>
+        <csillag>4</csillag>
+
+        <!-- Kapcsolatok -->
+        <foszakacsRef fkod="F1" />
+
+        <szakacsok>
+            <szakacs szkod="S1" />
+            <szakacs szkod="S2" />
+        </szakacsok>
+
+        <gyakornokok>
+            <gyakornok gykod="G1" />
+        </gyakornokok>
+
+        <rendelesek>
+            <rendeles rkod="R1" />
+            <rendeles rkod="R2" />
+        </rendelesek>
+    </etterem>
+
+    <etterem ekod="E2">
+        <nev>Vadász Vendéglő</nev>
+        <cim>
+            <varos>Budapest</varos>
+            <utca>Alkotmány út</utca>
+            <hazszam>120</hazszam>
+        </cim>
+        <csillag>3</csillag>
+
+        <foszakacsRef fkod="F2" />
+        <szakacsok>
+            <szakacs szkod="S3" />
+        </szakacsok>
+        <gyakornokok>
+            <gyakornok gykod="G2" />
+        </gyakornokok>
+        <rendelesek>
+            <rendeles rkod="R3" />
+        </rendelesek>
+    </etterem>
+
+
+    <!-- ===== FŐSZAKÁCSOK ===== -->
+    <foszakacsok>
+        <foszakacs fkod="F1">
+            <nev>Kiss Gábor</nev>
+            <eletkor>45</eletkor>
+            <vegzettseg>Mesterszakács</vegzettseg>
+        </foszakacs>
+
+        <foszakacs fkod="F2">
+            <nev>Tóth László</nev>
+            <eletkor>50</eletkor>
+            <vegzettseg>Executive Chef</vegzettseg>
+        </foszakacs>
+    </foszakacsok>
+
+
+    <!-- ===== SZAKÁCSOK ===== -->
+    <szakacsok>
+        <szakacs szkod="S1">
+            <nev>Nagy András</nev>
+            <reszleg>Melegkonyha</reszleg>
+            <vegzettseg>Szakács OKJ</vegzettseg>
+        </szakacs>
+
+        <szakacs szkod="S2">
+            <nev>Horváth Dóra</nev>
+            <reszleg>Hidegkonyha</reszleg>
+            <vegzettseg>Cukrász</vegzettseg>
+        </szakacs>
+
+        <szakacs szkod="S3">
+            <nev>Barta Krisztián</nev>
+            <reszleg>Grill</reszleg>
+            <vegzettseg>Szakács OKJ</vegzettseg>
+        </szakacs>
+    </szakacsok>
+
+
+    <!-- ===== GYAKORNOKOK ===== -->
+    <gyakornokok>
+        <gyakornok gykod="G1">
+            <nev>Molnár Zsófia</nev>
+            <gyakorlat>
+                <kezdete>2025-06-01</kezdete>
+                <idotartama>3 hónap</idotartama>
+            </gyakorlat>
+            <muszak>Délelőtt</muszak>
+        </gyakornok>
+
+        <gyakornok gykod="G2">
+            <nev>Balogh Levente</nev>
+            <gyakorlat>
+                <kezdete>2025-07-01</kezdete>
+                <idotartama>2 hónap</idotartama>
+            </gyakorlat>
+            <muszak>Délután</muszak>
+        </gyakornok>
+    </gyakornokok>
+
+
+    <!-- ===== VENDÉGEK ===== -->
+    <vendegek>
+        <vendeg vkod="V1">
+            <nev>Kovács Anna</nev>
+            <eletkor>34</eletkor>
+            <cim>
+                <varos>Szeged</varos>
+                <utca>Rózsa utca</utca>
+                <hazszam>14</hazszam>
+            </cim>
+        </vendeg>
+
+        <vendeg vkod="V2">
+            <nev>Nemes Péter</nev>
+            <eletkor>29</eletkor>
+            <cim>
+                <varos>Budapest</varos>
+                <utca>Kőbányai út</utca>
+                <hazszam>22</hazszam>
+            </cim>
+        </vendeg>
+    </vendegek>
+
+
+    <!-- ===== RENDELÉSEK ===== -->
+    <rendelesek>
+        <rendeles rkod="R1">
+            <etel>Rántott hal</etel>
+            <osszeg>4800</osszeg>
+            <etteremRef ekod="E1" />
+            <vendegRef vkod="V1" />
+        </rendeles>
+
+        <rendeles rkod="R2">
+            <etel>Halászlé</etel>
+            <osszeg>3500</osszeg>
+            <etteremRef ekod="E1" />
+            <vendegRef vkod="V1" />
+        </rendeles>
+
+        <rendeles rkod="R3">
+            <etel>Vadas marha</etel>
+            <osszeg>5200</osszeg>
+            <etteremRef ekod="E2" />
+            <vendegRef vkod="V2" />
+        </rendeles>
+    </rendelesek>
+
+</vendeglatas>
