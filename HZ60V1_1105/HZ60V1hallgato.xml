@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hallgatok>
+    <hallgato id="01">
+        <keresznev>Tibor</keresznev>
+        <vezeteknev>Tóth</vezeteknev>
+        <foglalkozas>Java programozó</foglalkozas>
+    </hallgato>
+    <hallgato id="02">
+        <keresznev>László</keresznev>
+        <vezeteknev>Nagy</vezeteknev>
+        <foglalkozas>Web programozó</foglalkozas>
+    </hallgato>
+    <hallgato id="03">
+        <keresznev>Szerencsi</keresznev>
+        <vezeteknev>Ilona</vezeteknev>
+        <foglalkozas>Diák</foglalkozas>
+    </hallgato>
+</hallgatok>
