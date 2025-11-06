@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HZ60V1_mozi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="HZ60V1_XSD.xsd">
+    
+    <!-- Mozik-->
+
+    <mozi Mkod="m1">
+    <név>Miskolc Mozi</név>
+    <cím>
+        <város>Miskolc</város>
+        <utca>Fenyőfi</utca>
+        <házszám>114.</házszám>
+    </cím>
+    </mozi>
+
+    <mozi Mkod="m2">
+    <név>Classic Mozi</név>
+    <cím>
+        <város>Hódmezővásárhely</város>
+        <utca>Kossuth Lajos</utca>
+        <házszám>40.</házszám>
+    </cím>
+    </mozi>
+
+    <mozi Mkod="m3">
+    <név> Mozi</név>
+    <cím>
+        <város>Miskolc</város>
+        <utca>Fenyőfi</utca>
+        <házszám>114.</házszám>
+    </cím>
+    </mozi>
+
+    <!-- Dolgozók-->
+
+    <dolgozó Dkod="d1" M_D="m2">
+    <név>Tóth Árpád</név>
+    <műszak>Délelőtt</műszak>
+    <beosztás>Pénztáros</beosztás>
+    </dolgozó>
+
+    <dolgozó Dkod="d2" M_D="m1">
+    <név>Lakatos Tihamér</név>
+    <műszak>Délután</műszak>
+    <beosztás>Takarító</beosztás>
+    </dolgozó>
+
+    <dolgozó Dkod="d3" M_D="m1">
+    <név>Nagy István</név>
+    <műszak>Délután</műszak>
+    <beosztás>Biztonsági őr</beosztás>
+    </dolgozó>
+
+    <dolgozó Dkod="d4" M_D="m3">
+    <név>Hlad Enikő</név>
+    <műszak>Délelőtt</műszak>
+    <beosztás>Menedzser</beosztás>
+    </dolgozó>
+
+    <!-- Teremek-->
+
+    <terem Tkod="t1" M_T="m1">
+        <férőhely>40</férőhely>
+        <típus>Imax</típus>
+        <hangrendszer>AuroMax</hangrendszer>
+        <extrák>Masszázsszék</extrák>
+    </terem>
+    
+    <terem Tkod="t2" M_T="m3">
+        <férőhely>55</férőhely>
+        <típus>Normál</típus>
+        <hangrendszer>Broadway Surround</hangrendszer>
+        <extrák>Nagy lábtér</extrák>
+    </terem>
+
+    <terem Tkod="t3" M_T="m2">
+        <férőhely>62</férőhely>
+        <típus>3DX</típus>
+        <hangrendszer>Dolby Atmos</hangrendszer>
+        <extrák>Masszázsszék</extrák>
+    </terem>
+
+    <terem Tkod="t4" M_T="m2">
+        <férőhely>30</férőhely>
+        <típus>Normál</típus>
+        <hangrendszer>AuroMax</hangrendszer>
+        <extrák>Masszázsszék</extrák>
+    </terem>
+
+    <terem Tkod="t5" M_T="m3">
+        <férőhely>45</férőhely>
+        <típus>Imax</típus>
+        <hangrendszer>Dolby Atmos</hangrendszer>
+        <extrák>Nagy lábtér</extrák>
+    </terem>
+
+    <!-- Filmek-->
+
+    <film Fkod="f1" M_F="m2">
+        <cím>Ponyvaregény</cím>
+        <szereplő>Samuel L. Jackson</szereplő>
+        <szereplő>John Travolta</szereplő>
+        <szereplő>Bruce Willis</szereplő>
+        <hossz>154</hossz>
+        <rendező>Quentin Tarantino</rendező>
+        <értékelés>8.8</értékelés>
+        <év>1994</év>
+    </film>
+
+    <film Fkod="f2" M_F="m1">
+        <cím>12 dühös ember</cím>
+        <szereplő>Henry Fonda</szereplő>
+        <szereplő>Lee J. Cobb</szereplő>
+        <szereplő>Martin Balsam</szereplő>
+        <hossz>96</hossz>
+        <rendező>Sydney Lumet</rendező>
+        <értékelés>9.0</értékelés>
+        <év>1957</év>
+    </film>
+
+    <film Fkod="f3" M_F="m1">
+        <cím>Harcosok klubja</cím>
+        <szereplő>Brad Pitt</szereplő>
+        <szereplő>Edward Norton</szereplő>
+        <szereplő>Meat Loaf</szereplő>
+        <hossz>139</hossz>
+        <rendező>David Fincher</rendező>
+        <értékelés>8.8</értékelés>
+        <év>1999</év>
+    </film>
+
+    <film Fkod="f4" M_F="m3">
+        <cím>Forrest Gump</cím>
+        <szereplő>Tom Hanks</szereplő>
+        <szereplő>Robin Wright</szereplő>
+        <szereplő>Gary Sinise</szereplő>
+        <hossz>142</hossz>
+        <rendező>Robert Zemeckis</rendező>
+        <értékelés>8.9</értékelés>
+        <év>1994</év>
+    </film>
+
+    <!-- Vásárlók-->
+
+    <vásárló Vkod="v1" J_V="j3">
+        <cím>
+            <város>Battonya</város>
+            <utca>Kodály Zoltán</utca>
+            <házszám>4.</házszám>
+        </cím>
+        <név>Szerencsi Henrik</név>
+        <életkor>26</életkor>
+        <foglalás>
+            <film_cím>Ponyvaregény</film_cím>
+            <időpont>18:00</időpont>
+            <nyelv>Magyar</nyelv>    
+        </foglalás>
+    </vásárló>
+
+    <vásárló Vkod="v2" J_V="j2">
+        <cím>
+            <város>Makkoshotyka</város>
+            <utca>Arany János</utca>
+            <házszám>101.</házszám>
+        </cím>
+        <név>Lajos Sándor</név>
+        <életkor>45</életkor>
+        <foglalás>
+            <film_cím>12 dühös ember</film_cím>
+            <időpont>12:00</időpont>
+            <nyelv>magyar</nyelv>    
+        </foglalás>
+    </vásárló>
+
+    <vásárló Vkod="v3" J_V="j1">
+        <cím>
+            <város>Budapest</város>
+            <utca>Árpád</utca>
+            <házszám>321.</házszám>
+        </cím>
+        <név>Kiss Attila</név>
+        <életkor>33</életkor>
+        <foglalás>
+            <film_cím>12 dühös ember</film_cím>
+            <időpont>14:00</időpont>
+            <nyelv>angol</nyelv>    
+        </foglalás>
+    </vásárló>
+
+    <!-- Jegyek-->
+
+    <jegy Jkod="j1" M_J="m2">
+        <ár>2200</ár>
+        <kedvezmény>Nincs</kedvezmény>
+    </jegy>
+
+    <jegy Jkod="j2" M_J="m1">
+        <ár>1500</ár>
+        <kedvezmény>Diák</kedvezmény>
+    </jegy>
+
+    <jegy Jkod="j3" M_J="m3">
+        <ár>2200</ár>
+        <kedvezmény>Nincs</kedvezmény>
+    </jegy>
+
+    <!-- Büfék-->
+
+    <büfé Bkod="b1" M_B="m1">
+        <étel>
+            <termék>Popcorn</termék>
+            <típus>Sós</típus>
+            <ár>1400</ár>
+            <méret>Kicsi</méret>
+            <méret>Közepes</méret>
+            <méret>Nagy</méret>
+        </étel>
+        <étel>
+            <termék>Popcorn</termék>
+            <típus>Vajas</típus>
+            <ár>1600</ár>
+            <méret>Kicsi</méret>
+            <méret>Közepes</méret>
+            <méret>Nagy</méret>
+        </étel>
+        <egyéb>
+            <termék>Kitűző</termék>
+            <ár>2500</ár>    
+        </egyéb>
+        <ital>
+            <termék>Kóla</termék>
+            <típus>Cukormentes</típus>
+            <ár>1200</ár>
+            <űrtartalom>1000</űrtartalom>
+            <űrtartalom>750</űrtartalom>
+            <űrtartalom>500</űrtartalom>
+        </ital>
+        <ital>
+            <termék>Fanta</termék>
+            <típus>Narancs</típus>
+            <ár>1100</ár>
+            <űrtartalom>1000</űrtartalom>
+            <űrtartalom>750</űrtartalom>
+            <űrtartalom>500</űrtartalom>
+        </ital>
+    </büfé>
+
+    <büfé Bkod="b2" M_B="m2">
+        <étel>
+            <termék>Popcorn</termék>
+            <típus>Vajas</típus>
+            <ár>1500</ár>
+            <méret>Kicsi</méret>
+            <méret>Közepes</méret>
+            <méret>Nagy</méret>
+        </étel>
+        <étel>
+            <termék>Nachos</termék>
+            <típus>Sajtos</típus>
+            <ár>2300</ár>
+            <méret>Kicsi</méret>
+            <méret>Közepes</méret>
+            <méret>Nagy</méret>
+        </étel>
+        <egyéb>
+            <termék>Plakát</termék>
+            <ár>4500</ár>
+        </egyéb>
+        <egyéb>
+            <termék>Kitűző</termék>
+            <ár>2500</ár>    
+        </egyéb>
+        <ital>
+            <termék>Fanta</termék>
+            <típus>Narancs</típus>
+            <ár>1100</ár>
+            <űrtartalom>1000</űrtartalom>
+            <űrtartalom>750</űrtartalom>
+            <űrtartalom>500</űrtartalom>
+        </ital>
+        <ital>
+            <termék>Ice Tea</termék>
+            <típus>Barackos</típus>
+            <ár>1200</ár>
+            <űrtartalom>1000</űrtartalom>
+            <űrtartalom>750</űrtartalom>
+            <űrtartalom>500</űrtartalom>
+        </ital>
+    </büfé>
+
+    <büfé Bkod="b3" M_B="m1">
+        <étel>
+            <termék>Nachos</termék>
+            <típus>Sajtos</típus>
+            <ár>2300</ár>
+            <méret>Kicsi</méret>
+            <méret>Közepes</méret>
+            <méret>Nagy</méret>
+        </étel>
+        <étel>
+            <termék>Gumicukor</termék>
+            <típus>Vegyes</típus>
+            <ár>2600</ár>
+            <méret>Zacskó</méret>
+        </étel>
+        <egyéb>
+            <termék>Figura</termék>
+            <ár>5000</ár>    
+        </egyéb>
+        <ital>
+            <termék>Ice Tea</termék>
+            <típus>Citromos</típus>
+            <ár>1300</ár>
+            <űrtartalom>1000</űrtartalom>
+            <űrtartalom>750</űrtartalom>
+            <űrtartalom>500</űrtartalom>
+        </ital>
+    </büfé>
+
+</HZ60V1_mozi>
