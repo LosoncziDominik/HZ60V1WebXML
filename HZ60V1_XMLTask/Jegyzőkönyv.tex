@@ -79,7 +79,7 @@ A feladatok első felében alapvető adatmodell ábrázolását kellett megvaló
 
 \subsection{Az adatbázis ER modell tervezése}
 
-Az adatmodellben a "mozi" lett a fő elem, amihez minden más egyed idegenkulccsal csatlakozik. Ennek az egyednek a kulcsa az Mkód, értékei "m?" ahol a "?" bármely szám karakternek feleltethető meg. A tulajdonságai a név (string) és cím, amely a város (string), utca (string) és házszám-ból (integer) áll. A többi egyed a vásárló, dolgozó, terem, film és büfé, mind kapcsolatban állnak a mozival és a vásárlónak még egy olyan kapcsolata is van, aminek tulajdonságai vannak. Ügyeltem a feladat kiíráshoz igazodóan minden kapcsolat típust feltüntetni (1:1, 1:N, N:M), valamint minden tulajdonság típust is használni (normál, kulcs, többértékű, összetett).
+Az adatmodellben a "mozi" lett a fő elem, amihez minden más egyed idegenkulccsal csatlakozik. A többi egyed a vásárló, dolgozó, terem, film és büfé, mind kapcsolatban állnak a mozival és a vásárlónak még egy olyan kapcsolata is van, aminek tulajdonságai vannak. Ügyeltem a feladat kiíráshoz igazodóan minden kapcsolat típust feltüntetni (1:1, 1:N, N:M), valamint minden tulajdonság típust is használni (normál, kulcs, többértékű, összetett).
 
 A feladatban próbáltam bonyolultabb szerkezeteket is létrehozni, mint a Büfé, aminek 3 tulajdonsága is egyszerre többértékű és összetett. Ennek az adatszerkezete egy egész feladatéval is felérhetne, viszont ezért maximalizáltam a tulajdonságok számát 4-ben, így még elég részletes és megfelelően kompakt a feladat teljesítéséhez.
 
