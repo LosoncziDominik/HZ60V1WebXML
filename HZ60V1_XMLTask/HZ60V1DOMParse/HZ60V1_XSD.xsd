@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="HZ60V1_mozi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mozi" type="moziTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="dolgozó" type="dolgozóTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="terem" type="teremTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="film" type="filmTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="vásárló" type="vásárlóTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="jegy" type="jegyTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="büfé" type="büféTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Mkod" type="xs:ID"></xs:attribute>
+        </xs:complexType>
+
+        <!-- Kulcsok-->
+
+        <xs:key name="Mozi_kulcs">
+            <xs:selector xpath="mozi"/>
+            <xs:field xpath="@Mkod"/>
+        </xs:key>
+
+        <xs:key name="Dolgozó_kulcs">
+            <xs:selector xpath="dolgozó"/>
+            <xs:field xpath="@Dkod"/>
+        </xs:key>
+
+        <xs:key name="Terem_kulcs">
+            <xs:selector xpath="terem"/>
+            <xs:field xpath="@Tkod"/>
+        </xs:key>
+
+        <xs:key name="Film_kulcs">
+            <xs:selector xpath="film"/>
+            <xs:field xpath="@Fkod"/>
+        </xs:key>
+
+        <xs:key name="Vásárló_kulcs">
+            <xs:selector xpath="vásárló"/>
+            <xs:field xpath="@Vkod"/>
+        </xs:key>
+
+        <xs:key name="Jegy_kulcs">
+            <xs:selector xpath="jegy"/>
+            <xs:field xpath="@Jkod"/>
+        </xs:key>
+
+        <xs:key name="Büfé_kulcs">
+            <xs:selector xpath="büfé"/>
+            <xs:field xpath="@Bkod"/>
+        </xs:key>
+
+        <!-- Idegen kulcsok-->
+
+        <xs:keyref name="Dolgozó_Mozi_FK" refer="Mozi_kulcs">
+            <xs:selector xpath="dolgozó"/>
+            <xs:field xpath="@M_D"/>
+        </xs:keyref>
+
+        <xs:keyref name="Terem_Mozi_FK" refer="Mozi_kulcs">
+            <xs:selector xpath="terem"/>
+            <xs:field xpath="@M_T"/>
+        </xs:keyref>
+
+        <xs:keyref name="Film_Mozi_FK" refer="Mozi_kulcs">
+            <xs:selector xpath="film"/>
+            <xs:field xpath="@M_F"/>
+        </xs:keyref>
+
+        <xs:keyref name="Vásárló_Jegy_FK" refer="Jegy_kulcs">
+            <xs:selector xpath="vásárló"/>
+            <xs:field xpath="@J_V"/>
+        </xs:keyref>
+
+        <xs:keyref name="Jegy_Mozi_FK" refer="Mozi_kulcs">
+            <xs:selector xpath="jegy"/>
+            <xs:field xpath="@M_J"/>
+        </xs:keyref>
+
+        <xs:keyref name="Büfé_Mozi_FK" refer="Mozi_kulcs">
+            <xs:selector xpath="büfé"/>
+            <xs:field xpath="@M_B"/>
+        </xs:keyref>
+
+        <xs:unique name="UniqueBufePerMozi">
+            <xs:selector xpath="büfé"/>
+            <xs:field xpath="@M_B"/>
+        </xs:unique>
+    </xs:element>
+
+        <!-- Komplex típusok-->
+
+        <xs:complexType name="moziTipus">
+            <xs:sequence>
+                <xs:element name="név" type="xs:string"></xs:element>
+                <xs:element name="cím" type="címTipus"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Mkod" type="xs:ID" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="dolgozóTipus">
+            <xs:sequence>
+                <xs:element name="név" type="xs:string"></xs:element>
+                <xs:element name="műszak" type="xs:string"></xs:element>
+                <xs:element name="beosztás" type="xs:string"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Dkod" type="xs:ID" use="required"></xs:attribute>
+            <xs:attribute name="M_D" type="xs:IDREF" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="teremTipus">
+            <xs:sequence>
+                <xs:element name="férőhely" type="xs:int"></xs:element>
+                <xs:element name="típus" type="xs:string"></xs:element>
+                <xs:element name="hangrendszer" type="xs:string"></xs:element>
+                <xs:element name="extrák" type="xs:string"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Tkod" type="xs:ID" use="required"></xs:attribute>
+            <xs:attribute name="M_T" type="xs:IDREF" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="filmTipus">
+            <xs:sequence>
+                <xs:element name="cím" type="xs:string"></xs:element>
+                <xs:element name="szereplő" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="hossz" type="xs:int"></xs:element>
+                <xs:element name="rendező" type="xs:string"></xs:element>
+                <xs:element name="értékelés" type="xs:float"></xs:element>
+                <xs:element name="év" type="xs:string"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Fkod" type="xs:ID" use="required"></xs:attribute>
+            <xs:attribute name="M_F" type="xs:IDREF" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="vásárlóTipus">
+            <xs:sequence>
+                <xs:element name="cím" type="címTipus"></xs:element>
+                <xs:element name="név" type="xs:string"></xs:element>
+                <xs:element name="életkor" type="xs:int"></xs:element>
+                <xs:element name="foglalás" type="foglalásTipus"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Vkod" type="xs:ID" use="required"></xs:attribute>
+            <xs:attribute name="J_V" type="xs:IDREF" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="jegyTipus">
+            <xs:sequence>
+                <xs:element name="ár" type="xs:int"></xs:element>
+                <xs:element name="kedvezmény" type="xs:string"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Jkod" type="xs:ID" use="required"></xs:attribute>
+            <xs:attribute name="M_J" type="xs:IDREF" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="büféTipus">
+            <xs:sequence>
+                <xs:element name="étel" type="ételTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="egyéb" type="egyébTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                <xs:element name="ital" type="italTipus" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="Bkod" type="xs:ID" use="required"></xs:attribute>
+            <xs:attribute name="M_B" type="xs:IDREF" use="required"></xs:attribute>
+        </xs:complexType>
+
+        <xs:complexType name="címTipus">
+            <xs:sequence>
+                <xs:element name="város" type="xs:string"></xs:element>
+                <xs:element name="utca" type="xs:string"></xs:element>
+                <xs:element name="házszám" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="foglalásTipus">
+            <xs:sequence>
+                <xs:element name="film_cím" type="xs:string"></xs:element>
+                <xs:element name="időpont" type="xs:string"></xs:element>
+                <xs:element name="nyelv" type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="ételTipus">
+            <xs:sequence>
+                <xs:element name="termék" type="xs:string"></xs:element>
+                <xs:element name="típus" type="xs:string"></xs:element>
+                <xs:element name="ár" type="xs:int"></xs:element>
+                <xs:element name="méret" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="egyébTipus">
+            <xs:sequence>
+                <xs:element name="termék" type="xs:string"></xs:element>
+                <xs:element name="ár" type="xs:int"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="italTipus">
+            <xs:sequence>
+                <xs:element name="termék" type="xs:string"></xs:element>
+                <xs:element name="típus" type="xs:string"></xs:element>
+                <xs:element name="ár" type="xs:int"></xs:element>
+                <xs:element name="űrtartalom" type="xs:int" minOccurs="1" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+</xs:schema>
