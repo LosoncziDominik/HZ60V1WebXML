@@ -31,6 +31,7 @@ public class HZ60V1DomRead
             System.out.println("  Város: " + cim.getElementsByTagName("város").item(0).getTextContent());
             System.out.println("  Utca: " + cim.getElementsByTagName("utca").item(0).getTextContent());
             System.out.println("  Házszám: " + cim.getElementsByTagName("házszám").item(0).getTextContent());
+            System.out.println();
         }
 
         // Dolgozók
@@ -43,6 +44,7 @@ public class HZ60V1DomRead
             System.out.println("Név: " + d.getElementsByTagName("név").item(0).getTextContent());
             System.out.println("Műszak: " + d.getElementsByTagName("műszak").item(0).getTextContent());
             System.out.println("Beosztás: " + d.getElementsByTagName("beosztás").item(0).getTextContent());
+            System.out.println();
         }
 
         // Termek
@@ -56,6 +58,7 @@ public class HZ60V1DomRead
             System.out.println("Típus: " + t.getElementsByTagName("típus").item(0).getTextContent());
             System.out.println("Hangrendszer: " + t.getElementsByTagName("hangrendszer").item(0).getTextContent());
             System.out.println("Extrák: " + t.getElementsByTagName("extrák").item(0).getTextContent());
+            System.out.println();
         }
 
         // Filmek
@@ -70,6 +73,7 @@ public class HZ60V1DomRead
             System.out.println("Rendező: " + f.getElementsByTagName("rendező").item(0).getTextContent());
             System.out.println("Év: " + f.getElementsByTagName("év").item(0).getTextContent());
             System.out.println("Értékelés: " + f.getElementsByTagName("értékelés").item(0).getTextContent());
+            System.out.println();
 
             NodeList szereplok = f.getElementsByTagName("szereplő");
             System.out.print("Szereplők: ");
@@ -77,6 +81,7 @@ public class HZ60V1DomRead
                 System.out.print(szereplok.item(j).getTextContent());
                 if (j < szereplok.getLength() - 1) System.out.print(", ");
             }
+            System.out.println();
         }
 
         // Jegyek
@@ -88,6 +93,7 @@ public class HZ60V1DomRead
             System.out.println("Mozi kód (M_J): " + j.getAttribute("M_J"));
             System.out.println("Ár: " + j.getElementsByTagName("ár").item(0).getTextContent() + " Ft");
             System.out.println("Kedvezmény: " + j.getElementsByTagName("kedvezmény").item(0).getTextContent());
+            System.out.println();
         }
 
         // Vásárlók
@@ -107,6 +113,7 @@ public class HZ60V1DomRead
             System.out.println("Foglalás - Film: " + foglalas.getElementsByTagName("film_cím").item(0).getTextContent());
             System.out.println("Foglalás - Időpont: " + foglalas.getElementsByTagName("időpont").item(0).getTextContent());
             System.out.println("Foglalás - Nyelv: " + foglalas.getElementsByTagName("nyelv").item(0).getTextContent());
+            System.out.println();
         }
 
         // Büfék
