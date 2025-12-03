@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <style>
+input, label{
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: rgb(43, 212, 43);
+    color: white;
+    
+}
+
+div{
+    border: 1px black solid;
+    padding: 20px;
+    border-radius: 12px;
+}
+    </style>
+</head>
+<body>
+
+    <h1>A24E5Z Hallgatók</h1>
+
+<div>
+
+    <h2>Új hallgató hozzáadása</h2>
+
+    <label for="name">Név:</label>
+    <input type="text", id="name", name="name"> <br>
+    <label for="evfoly">Évfolyam:</label>
+    <input type="text", id="evfoly", name="evfoly"> <br>
+    <label for="szak">Szak:</label>
+    <input type="text", id="szak", name="szak" placeholder="PTI"> <br>
+    <label for="email">Email:</label>
+    <input type="email", id="email", name="email" placeholder="pti@pti.hu"> <br>
+    <label for="neptunk">NEPTUN kód:</label>
+    <input type="text", id="neptunk", name="neptunk" placeholder="AAA- 123"> <br>
+
+    <button onclick="mentes()" >Mentés</button>
+</div>
+
+<div>
+<div>
+    <label for="keres"><b>Keresés:</b></label> <br>
+    <input type="text" id="name" style="margin-top: 5px;" placeholder="nev">
+</div>
+    <h3>Rendezés</h3>
+    <select id="rend" name="rend" required>
+        <option value="" disabled selected>Nincs rendezés</option>
+        <option value="name">Név</option>
+        <option value="evfoly">Évfolyam</option>
+    </select>
+
+<br><br>
+    <label for="expimp"><b>Export / Import JSON</b></label>
+    
+
+
+
+</div>
+
+<script>
+    // Mentés
+    function getHallgatok() {
+        // ha még nincs semmi, legyen üres tömb
+        const stored = localStorage.getItem('hallgatok');
+        if (!stored) {
+            return [];
+        }
+        try {
+            return JSON.parse(stored);
+        } catch (e) {
+            console.error('Hibás JSON a localStorage-ben:', e);
+            return [];
+        }
+    }
+
+    function saveHallgatok(hallgatok) {
+        localStorage.setItem('hallgatok', JSON.stringify(hallgatok));
+    }
+
+    function mentes() {
+        // aktuális hallgatók betöltése localStorage-ből
+        const hallgatok = getHallgatok();
+
+        // új hallgató az űrlapból
+        const ujHallgato = {
+            name:      document.querySelector('input.name').value,
+            evfolyam:  document.querySelector('input.evfolyam').value,
+            szak:      document.querySelector('input.szak').value,
+            email:     document.querySelector('input.email').value,
+            neptunkod: document.querySelector('input.neptunkod').value
+        };
+
+        // hozzáadjuk a tömbhöz
+        hallgatok.push(ujHallgato);
+
+        // visszamentjük localStorage-be
+        saveHallgatok(hallgatok);
+
+        // opcionális: kiírjuk, hogy sikerült
+        document.getElementById('kimenet').textContent =
+            'Hallgató elmentve! Jelenlegi lista:\n\n' +
+            JSON.stringify(hallgatok, null, 4);
+
+        // mezők ürítése
+        document.querySelector('input.name').value = "";
+        document.querySelector('input.evfolyam').value = "";
+        document.querySelector('input.szak').value = "";
+        document.querySelector('input.email').value = "";
+        document.querySelector('input.neptunkod').value = "";
+    }
+
+    function listazas() {
+        const hallgatok = getHallgatok();
+        document.getElementById('kimenet').textContent =
+            JSON.stringify(hallgatok, null, 4);
+    }
+
+    // -----------------------------
+    //  EXPORT – űrlap → JSON
+    // -----------------------------
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        const formData = new FormData(e.target);
+        let obj = {};
+    
+        formData.forEach((value, key) => obj[key] = value);
+    
+        const jsonString = JSON.stringify(obj, null, 2);
+    
+        // JSON fájl letöltése
+        const blob = new Blob([jsonString], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+    
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "adatok.json";
+        a.click();
+    
+        URL.revokeObjectURL(url);
+    });
+    
+    
+    // -----------------------------
+    //  IMPORT – JSON → űrlap
+    // -----------------------------
+    document.getElementById("jsonFileInput").addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (!file) return;
+    
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            try {
+                const data = JSON.parse(event.target.result);
+    
+                // JSON adatok kitöltése űrlapba
+                const form = document.getElementById("myForm");
+    
+                Object.keys(data).forEach(key => {
+                    if (form.elements[key]) {
+                        form.elements[key].value = data[key];
+                    }
+                });
+    
+                alert("JSON sikeresen importálva!");
+    
+            } catch (err) {
+                alert("Hibás JSON fájl!");
+            }
+        };
+    
+        reader.readAsText(file);
+    });
+
+    document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        doSearch();
+    }
+});
+
+function doSearch() {
+    const text = document.getElementById("searchInput").value.toLowerCase();
+    const items = document.querySelectorAll("#itemList li");
+
+    items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(text)) {
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+    </script>
+
+</body>
+
+
+</html>
