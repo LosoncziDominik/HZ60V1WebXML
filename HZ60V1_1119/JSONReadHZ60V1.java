@@ -6,14 +6,14 @@ import org.json.simple.parser.ParseException;
 
 public class JSONReadHZ60V1 {
     public static void main(String[] args){
-        try(FileReader reader = new FileReader("orerendHZ60V1.json")){
+        try(FileReader reader = new FileReader("orarendHZ60V1.json")){
             
             // Parse
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
             // Root, majd óra lista lekérése
-            JSONObject root = (JSONObject) jsonObject.get("LD_orarnd");
+            JSONObject root = (JSONObject) jsonObject.get("HZ60V1_orarend");
             JSONArray lessons = (JSONArray) root.get("ora");
 
             // Óra adatok kiírása

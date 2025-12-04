@@ -2,74 +2,56 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>HZ60V1 Órarend</title>
-
-    <style>
-        body {
-            font-family: Arial;
-            margin: 20px;
-        }
-        .lesson {
-            padding: 10px;
-            border: 1px solid #aaa;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            width: 360px;
-            background: #f2f2f2;
-        }
-        button {
-            padding: 10px 18px;
-            font-size: 16px;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-    </style>
+    <title>HZ60V1 Órarend 2025</title>
 </head>
-
 <body>
+    <h1>HZ60V1 Órarend 2025</h1>
 
-    <h2>HZ60V1 Órarend 2025</h2>
+    <button onclick="betoltOrarend()">Órarend betöltése</button>
 
-    <button onclick="loadJSON()">Órarend betöltése</button>
-
-    <div id="output"></div>
+    <pre id="output"></pre>
 
     <script>
-        function loadJSON() {
-            fetch("orarendHZ60V1.json")
-            .then(response => response.json())
-            .then(data => {
+        async function betoltOrarend() {
+            const out = document.getElementById("output");
+            out.textContent = "";
 
-                let root = data.HZ60V1_orarend;  // gyökérelem
-                let lessons = root.ora;          // órák tömb
-                let out = document.getElementById("output");
+            try {
+                // EZT a fájlt fetcheljük:
+                const resp = await fetch("orarendHZ60V1.json");
+                if (!resp.ok) {
+                    throw new Error("HTTP hiba: " + resp.status);
+                }
 
-                out.innerHTML = ""; // korábbi eredmény törlése
+                const data = await resp.json();
 
-                lessons.forEach(lesson => {
+                // A JSON szerkezete: { "HZ60V1_orarend": { "ora": [ ... ] } }
+                const root = data.HZ60V1_orarend;
+                if (!root || !Array.isArray(root.ora)) {
+                    out.textContent = "Hibás JSON szerkezet (nincs HZ60V1_orarend.ora)!";
+                    return;
+                }
 
-                    let div = document.createElement("div");
-                    div.className = "lesson";
+                const lessons = root.ora;
 
-                    div.innerHTML =
-                        "<strong>Tárgy:</strong> " + lesson.targy + "<br>" +
-                        "<strong>Helyszín:</strong> " + lesson.helyszin + "<br>" +
-                        "<strong>Oktató:</strong> " + lesson.oktato + "<br>" +
-                        "<strong>Szak:</strong> " + lesson.szak + "<br>" +
-                        "<strong>Időpont:</strong> " +
-                        lesson.idopont.nap + " " +
-                        lesson.idopont.tol + "-" +
-                        lesson.idopont.ig;
+                lessons.forEach((lesson, idx) => {
+                    const time = lesson.idopont || {};
 
-                    out.appendChild(div);
+                    out.textContent += "Óra " + (idx + 1) + "\n";
+                    out.textContent += "Tárgy: "   + lesson.targy + "\n";
+                    out.textContent += "Helyszín: " + lesson.helyszin + "\n";
+                    out.textContent += "Oktató: "   + lesson.oktato + "\n";
+                    out.textContent += "Szak: "     + lesson.szak + "\n";
+                    out.textContent += "Nap: "      + time.nap + "\n";
+                    out.textContent += "Tól: "      + time.tol + "\n";
+                    out.textContent += "Ig: "       + time.ig + "\n\n";
                 });
 
-            })
-            .catch(err => {
-                console.error("Hiba a JSON betöltésekor:", err);
-            });
+            } catch (err) {
+                console.error(err);
+                out.textContent = "Hiba: " + err.message;
+            }
         }
     </script>
-
 </body>
 </html>

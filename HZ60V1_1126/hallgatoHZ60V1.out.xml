@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Hallgat&oacute;k adatai</title>
+        <style>
+                    table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                    padding: 4px;
+                    }
+                    th { background-color: #dddddd; }
+                </style>
+    </head>
+    <body>
+        <h2>Hallgat&oacute;k adatai - for-each, value-of</h2>
+        <table>
+            <tr>
+                <th>ID</th><th>Vezet&eacute;kn&eacute;v</th><th>Keresztn&eacute;v</th><th>Becen&eacute;v</th><th>Kor</th><th>&Ouml;szt&ouml;nd&iacute;j</th>
+            </tr>
+            <tr>
+                <td>1</td><td>Nagy</td><td>Katalin</td><td>Kati</td><td>22</td><td>35000</td>
+            </tr>
+            <tr>
+                <td>2</td><td>Naftalin</td><td>Ernő</td><td>Eri</td><td>23</td><td>20000</td>
+            </tr>
+            <tr>
+                <td>3</td><td>Pusztai</td><td>Henrik</td><td>Heri</td><td>22</td><td>30000</td>
+            </tr>
+        </table>
+    </body>
+</html>
