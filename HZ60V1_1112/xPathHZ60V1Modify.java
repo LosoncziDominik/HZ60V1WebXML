@@ -18,23 +18,16 @@ public class xPathHZ60V1Modify {
     public static void main(String[] args) throws Exception {
         String xmlFile = "studentHZ60V1.xml";
 
-        // DOM beolvasás
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(false);
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document doc = db.parse(xmlFile);
         doc.getDocumentElement().normalize();
 
-        // XPath
         XPathFactory xpf = XPathFactory.newInstance();
         XPath xpath = xpf.newXPath();
 
-        // 1) student elem keresése id="01" alapján
         String exprString = "//student[@id='01']";
-
-        // Megjegyzés: a feltöltött XML-ben id="1" szerepel,
-        // ha nálad is így van, akkor ezt írd:
-        // String exprString = "//student[@id='1']";
 
         XPathExpression expr = xpath.compile(exprString);
         Node studentNode = (Node) expr.evaluate(doc, XPathConstants.NODE);
@@ -44,7 +37,6 @@ public class xPathHZ60V1Modify {
             return;
         }
 
-        // 2) keresztnev elem módosítása ebben a student-ben
         if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
             Element studentElem = (Element) studentNode;
             NodeList keresztnevek = studentElem.getElementsByTagName("keresztnev");
@@ -54,7 +46,6 @@ public class xPathHZ60V1Modify {
             }
         }
 
-        // 3) csak ezt az egy példányt írjuk ki a konzolra (XML formában)
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");

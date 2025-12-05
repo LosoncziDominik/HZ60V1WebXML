@@ -22,12 +22,10 @@ public class DOMModifyHZ60V1
 
             Node hallgat = doc.getElementsByTagName("hallgato").item(0);
 
-            // hallgat attribútumának lekérése
             NamedNodeMap attr = hallgat.getAttributes();
             Node nodeAttr = attr.getNamedItem("id");
             nodeAttr.setTextContent("01");
 
-            // loop the hallgat child node
             NodeList list = hallgat.getChildNodes();
 
             for (int temp = 0; temp < list.getLength(); temp++) {
@@ -49,11 +47,9 @@ public class DOMModifyHZ60V1
                 }
             }
 
-            // Tartalom konzolra írása
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
 
-            // Ez DOMSource tartalmazza a DOM fát. Egy bemeneti forrás létrehozása egy DOM csomóponttal.
             DOMSource source = new DOMSource(doc);
 
             System.out.println("---Módosított fájl---");

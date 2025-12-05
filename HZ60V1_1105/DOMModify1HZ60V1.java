@@ -21,7 +21,7 @@ public class DOMModify1HZ60V1 {
             Element newOraado = doc.createElement("oraado");
             newOraado.setTextContent("Dr. Kovács Béla");
 
-            Node firstOra = doc.getElementsByTagName("ora").item(0);
+            Node firstOra = doc.getElementsByTagName("ora").item(1);
             if (firstOra != null) {
                 firstOra.appendChild(newOraado);
             }

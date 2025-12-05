@@ -44,7 +44,7 @@
         <oktato>Kunné Dr. Tamás Judit</oktato>
         <szak>Programtervező informatikus Bsc</szak>
     </ora>
-    <ora id="5" tipus="előadás">
+    <ora id="5" tipus="eloadas">
         <targy>Algoritmusok és vizsgálatuk</targy>
         <idopont>
             <nap>Kedd</nap>
@@ -101,7 +101,7 @@
         <szak>Programtervező informatikus Bsc</szak>
     </ora>
 
-    <ora id="10" tipus="előadás">
+    <ora id="10" tipus="eloadas">
         <targy>Vállalati információs rendszerek fejlesztése</targy>
         <idopont>
             <nap>Szerda</nap>

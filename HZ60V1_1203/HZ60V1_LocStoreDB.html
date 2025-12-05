@@ -19,36 +19,92 @@ div{
     border: 1px black solid;
     padding: 20px;
     border-radius: 12px;
+    margin-top: 10px;
 }
+
+#searchTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+}
+
+#searchTable th, #searchTable td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+}
+
+#searchTable th {
+    background: #f5f5f5;
+    text-align: left;
+}
+
+.btn-edit {
+    background: #5bc0de;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.btn-delete {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body>
 
-    <h1>A24E5Z Hallgatók</h1>
+    <h1>HZ60V1 Hallgatók</h1>
+
+    <div>
+
+        <h2>Új hallgató hozzáadása</h2>
+
+        <label for="name">Név:</label>
+        <input type="text" class="name" id="name" name="name"> <br>
+        <label for="evfoly">Évfolyam:</label>
+        <input type="text" class="evfoly" id="evfoly" name="evfoly"> <br>
+        <label for="szak">Szak:</label>
+        <input type="text" class="szak" id="szak" name="szak" placeholder="PTI"> <br>
+        <label for="email">Email:</label>
+        <input type="email" class="email" id="email", name="email" placeholder="pti@pti.hu"> <br>
+        <label for="neptunk">NEPTUN kód:</label>
+        <input type="text" class="neptunk" id="neptunk", name="neptunk" placeholder="AAA-123"> <br>
+
+        <button onclick="mentes()" >Mentés</button>
+    </div>
 
 <div>
+<div>
+    <h3>Keresés</h3>
+    <input type="text"
+           id="searchInput"
+           placeholder="Keresés név / szak / email / NEPTUN szerint"
+           oninput="doSearch()">
 
-    <h2>Új hallgató hozzáadása</h2>
-
-    <label for="name">Név:</label>
-    <input type="text", id="name", name="name"> <br>
-    <label for="evfoly">Évfolyam:</label>
-    <input type="text", id="evfoly", name="evfoly"> <br>
-    <label for="szak">Szak:</label>
-    <input type="text", id="szak", name="szak" placeholder="PTI"> <br>
-    <label for="email">Email:</label>
-    <input type="email", id="email", name="email" placeholder="pti@pti.hu"> <br>
-    <label for="neptunk">NEPTUN kód:</label>
-    <input type="text", id="neptunk", name="neptunk" placeholder="AAA- 123"> <br>
-
-    <button onclick="mentes()" >Mentés</button>
+    <table id="searchTable">
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Évfolyam</th>
+                <th>Szak</th>
+                <th>Email</th>
+                <th>NEPTUN</th>
+                <th>Műveletek</th>
+            </tr>
+        </thead>
+        <tbody id="searchBody">
+        </tbody>
+    </table>
 </div>
 
-<div>
-<div>
-    <label for="keres"><b>Keresés:</b></label> <br>
-    <input type="text" id="name" style="margin-top: 5px;" placeholder="nev">
-</div>
+
     <h3>Rendezés</h3>
     <select id="rend" name="rend" required>
         <option value="" disabled selected>Nincs rendezés</option>
@@ -56,18 +112,25 @@ div{
         <option value="evfoly">Évfolyam</option>
     </select>
 
+
 <br><br>
     <label for="expimp"><b>Export / Import JSON</b></label>
     
+    <button type="button" onclick="exportJSON()">Export JSON</button>
 
+    <input type="file" id="importFile" accept="application/json" style="display:none"
+        onchange="importJSON(event)">
+
+    <button type="button" onclick="document.getElementById('importFile').click()">
+        Import JSON
+    </button>
+    
 
 
 </div>
 
 <script>
-    // Mentés
     function getHallgatok() {
-        // ha még nincs semmi, legyen üres tömb
         const stored = localStorage.getItem('hallgatok');
         if (!stored) {
             return [];
@@ -85,46 +148,34 @@ div{
     }
 
     function mentes() {
-        // aktuális hallgatók betöltése localStorage-ből
-        const hallgatok = getHallgatok();
+    const hallgatok = getHallgatok();
 
-        // új hallgató az űrlapból
-        const ujHallgato = {
-            name:      document.querySelector('input.name').value,
-            evfolyam:  document.querySelector('input.evfolyam').value,
-            szak:      document.querySelector('input.szak').value,
-            email:     document.querySelector('input.email').value,
-            neptunkod: document.querySelector('input.neptunkod').value
-        };
+    const ujHallgato = {
+        name:      document.getElementById('name').value,
+        evfolyam:  document.getElementById('evfoly').value,
+        szak:      document.getElementById('szak').value,
+        email:     document.getElementById('email').value,
+        neptunkod: document.getElementById('neptunk').value
+    };
 
-        // hozzáadjuk a tömbhöz
-        hallgatok.push(ujHallgato);
-
-        // visszamentjük localStorage-be
-        saveHallgatok(hallgatok);
-
-        // opcionális: kiírjuk, hogy sikerült
-        document.getElementById('kimenet').textContent =
+    const out = document.getElementById('kimenet');
+    if (out) {
+        out.textContent =
             'Hallgató elmentve! Jelenlegi lista:\n\n' +
             JSON.stringify(hallgatok, null, 4);
-
-        // mezők ürítése
-        document.querySelector('input.name').value = "";
-        document.querySelector('input.evfolyam').value = "";
-        document.querySelector('input.szak').value = "";
-        document.querySelector('input.email').value = "";
-        document.querySelector('input.neptunkod').value = "";
     }
 
-    function listazas() {
-        const hallgatok = getHallgatok();
-        document.getElementById('kimenet').textContent =
-            JSON.stringify(hallgatok, null, 4);
-    }
+    document.getElementById('name').value = '';
+    document.getElementById('evfoly').value = '';
+    document.getElementById('szak').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('neptunk').value = '';
 
-    // -----------------------------
-    //  EXPORT – űrlap → JSON
-    // -----------------------------
+    hallgatok.push(ujHallgato);
+    saveHallgatok(hallgatok);
+    listazas();
+}
+
     document.getElementById("myForm").addEventListener("submit", function (e) {
         e.preventDefault();
     
@@ -135,7 +186,6 @@ div{
     
         const jsonString = JSON.stringify(obj, null, 2);
     
-        // JSON fájl letöltése
         const blob = new Blob([jsonString], { type: "application/json" });
         const url = URL.createObjectURL(blob);
     
@@ -147,10 +197,6 @@ div{
         URL.revokeObjectURL(url);
     });
     
-    
-    // -----------------------------
-    //  IMPORT – JSON → űrlap
-    // -----------------------------
     document.getElementById("jsonFileInput").addEventListener("change", function (e) {
         const file = e.target.files[0];
         if (!file) return;
@@ -160,7 +206,6 @@ div{
             try {
                 const data = JSON.parse(event.target.result);
     
-                // JSON adatok kitöltése űrlapba
                 const form = document.getElementById("myForm");
     
                 Object.keys(data).forEach(key => {
@@ -181,22 +226,135 @@ div{
 
     document.getElementById("searchInput").addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
-        e.preventDefault();
+       e.preventDefault();
         doSearch();
     }
 });
 
 function doSearch() {
-    const text = document.getElementById("searchInput").value.toLowerCase();
-    const items = document.querySelectorAll("#itemList li");
+    const query = document.getElementById("searchInput").value.trim().toLowerCase();
+    const table = document.getElementById("searchTable");
+    const tbody = document.getElementById("searchBody");
 
-    items.forEach(item => {
-        if (item.textContent.toLowerCase().includes(text)) {
-            item.style.display = "";
-        } else {
-            item.style.display = "none";
-        }
+    if (query === "") {
+        table.style.display = "none";
+        tbody.innerHTML = "";
+        return;
+    }
+
+    const hallgatok = getHallgatok();
+
+    const talalatok = hallgatok.filter(h => {
+        const combined =
+            (h.name || "") + " " +
+            (h.evfolyam || "") + " " +
+            (h.szak || "") + " " +
+            (h.email || "") + " " +
+            (h.neptunkod || "");
+        return combined.toLowerCase().includes(query);
     });
+
+    tbody.innerHTML = "";
+    talalatok.forEach((h, index) => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${h.name || ""}</td>
+            <td>${h.evfolyam || ""}</td>
+            <td>${h.szak || ""}</td>
+            <td>${h.email || ""}</td>
+            <td>${h.neptunkod || ""}</td>
+            <td>
+                <button class="btn-edit" onclick="modositHallgato('${h.neptunkod}')">Módosít</button>
+                <button class="btn-delete" onclick="torolHallgato('${h.neptunkod}')">Töröl</button>
+            </td>
+        `;
+
+        tbody.appendChild(tr);
+    });
+
+    table.style.display = talalatok.length > 0 ? "table" : "none";
+}
+
+function modositHallgato(neptun) {
+    const hallgatok = getHallgatok();
+    const index = hallgatok.findIndex(h => h.neptunkod === neptun);
+    if (index === -1) {
+        alert("Nem található a hallgató (NEPTUN: " + neptun + ")");
+        return;
+    }
+
+    const h = hallgatok[index];
+
+    document.getElementById('name').value    = h.name || "";
+    document.getElementById('evfoly').value  = h.evfolyam || "";
+    document.getElementById('szak').value    = h.szak || "";
+    document.getElementById('email').value   = h.email || "";
+    document.getElementById('neptunk').value = h.neptunkod || "";
+
+    editingIndex = index;
+
+    const saveBtn = document.querySelector('button[onclick="mentes()"]');
+    if (saveBtn) saveBtn.textContent = "Módosítás mentése";
+}
+
+function torolHallgato(neptun) {
+    if (!confirm("Biztos törlöd? (" + neptun + ")")) return;
+
+    let hallgatok = getHallgatok();
+    hallgatok = hallgatok.filter(h => h.neptunkod !== neptun);
+    saveHallgatok(hallgatok);
+
+    doSearch();
+    listazas && listazas();
+}
+
+
+
+function exportJSON() {
+    const hallgatok = getHallgatok();
+    const jsonString = JSON.stringify(hallgatok, null, 2);
+
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "hallgatok.json";
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+
+function importJSON(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+
+            if (!Array.isArray(data)) {
+                alert("A JSON-ben egy tömbnek (hallgatók listájának) kell lennie!");
+                return;
+            }
+
+            saveHallgatok(data);
+
+            document.getElementById('kimenet').textContent =
+                'JSON sikeresen importálva! Jelenlegi lista:\n\n' +
+                JSON.stringify(data, null, 4);
+
+        } catch (err) {
+            console.error(err);
+            alert("Hibás JSON fájl: " + err.message);
+        }
+    };
+
+    reader.readAsText(file);
+    event.target.value = "";
 }
     </script>
 

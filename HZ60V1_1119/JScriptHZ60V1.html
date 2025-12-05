@@ -17,7 +17,6 @@
             out.textContent = "";
 
             try {
-                // EZT a fájlt fetcheljük:
                 const resp = await fetch("orarendHZ60V1.json");
                 if (!resp.ok) {
                     throw new Error("HTTP hiba: " + resp.status);
@@ -25,7 +24,6 @@
 
                 const data = await resp.json();
 
-                // A JSON szerkezete: { "HZ60V1_orarend": { "ora": [ ... ] } }
                 const root = data.HZ60V1_orarend;
                 if (!root || !Array.isArray(root.ora)) {
                     out.textContent = "Hibás JSON szerkezet (nincs HZ60V1_orarend.ora)!";

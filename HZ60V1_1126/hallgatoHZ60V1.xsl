@@ -32,7 +32,6 @@
                         <th>Ösztöndíj</th>
                     </tr>
                     
-                    <!-- végigmegyünk minden student elemeken -->
                     <xsl:for-each select="class/student">
                         <tr>
                             <td><xsl:value-of select="@id"/></td>

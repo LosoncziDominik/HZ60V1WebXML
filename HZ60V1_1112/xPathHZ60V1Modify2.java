@@ -14,14 +14,12 @@ public class xPathHZ60V1Modify2 {
         String xmlFileIn  = "HZ60V1_orarend.xml";
         String xmlFileOut = "HZ60V1_orarend3.xml";
 
-        // --------- BEMENETI DOM BEOLVASÁSA ----------
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(false);
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document doc = db.parse(xmlFileIn);
         doc.getDocumentElement().normalize();
 
-        // --------- XPATH: elso 3 ora ----------
         XPathFactory xpf = XPathFactory.newInstance();
         XPath xpath = xpf.newXPath();
         String exprStr = "/LD_orarend/ora[position() <= 3]";
@@ -38,19 +36,16 @@ public class xPathHZ60V1Modify2 {
         for (int i = 0; i < list.getLength(); i++) {
             Element ora = (Element) list.item(i);
 
-            // --- helyszin módosítása ---
             Node helyNode = ora.getElementsByTagName("helyszin").item(0);
             if (helyNode != null) {
                 helyNode.setTextContent("ONLINE");
             }
 
-            // --- csak ezt az ora elemet írjuk a konzolra ---
             System.out.println("------------");
             t.transform(new DOMSource(ora), new StreamResult(System.out));
             System.out.println();
         }
 
-        // --------- TELJES MÓDOSÍTOTT DOKUMENTUM KIÍRÁSA FÁJLBA ----------
         Transformer tAll = tf.newTransformer();
         tAll.setOutputProperty(OutputKeys.INDENT, "yes");
         tAll.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");

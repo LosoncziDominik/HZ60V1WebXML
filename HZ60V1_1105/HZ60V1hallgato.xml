@@ -12,8 +12,8 @@
         <foglalkozas>Web programozó</foglalkozas>
     </hallgato>
     <hallgato id="03">
-        <keresznev>Szerencsi</keresznev>
-        <vezeteknev>Ilona</vezeteknev>
+        <keresznev>Ilona</keresznev>
+        <vezeteknev>Szerencsi</vezeteknev>
         <foglalkozas>Diák</foglalkozas>
     </hallgato>
 </hallgatok>

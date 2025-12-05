@@ -14,14 +14,12 @@ public class xPathQueryHZ60V1 {
         String xmlFileIn  = "HZ60V1_orarend.xml";
         String xmlFileOut = "HZ60V1_orarend2.xml";
 
-        // --------- BEMENETI DOM BEOLVASÁSA ----------
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(false);
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document inDoc = db.parse(xmlFileIn);
         inDoc.getDocumentElement().normalize();
 
-        // --------- XPATH ----------
         XPathFactory xpf = XPathFactory.newInstance();
         XPath xpath = xpf.newXPath();
         String exprStr = "/LD_orarend/ora[position() <= 3]";
@@ -49,18 +47,16 @@ public class xPathQueryHZ60V1 {
             System.out.println("Helyszin: " + helyszin);
         }
 
-        // --------- ÚJ DOM A 3 ÓRÁNAK ----------
         Document outDoc = db.newDocument();
         Element root = outDoc.createElement("elso3ora");
         outDoc.appendChild(root);
 
         for (int i = 0; i < list.getLength(); i++) {
             Node ora = list.item(i);
-            Node imported = outDoc.importNode(ora, true); // deep copy
+            Node imported = outDoc.importNode(ora, true);
             root.appendChild(imported);
         }
 
-        // --------- XML FÁJLBA ÍRÁS ----------
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer t = tf.newTransformer();
         t.setOutputProperty(OutputKeys.INDENT, "yes");

@@ -19,7 +19,7 @@
             </style>
         </head>
         <body>
-            <h2>HZ60V1 Órarend – for-each, value-of</h2>
+            <h2>HZ60V1 Órarend for-each, value-of</h2>
 
             <table>
                 <tr>
@@ -34,7 +34,6 @@
                     <th>Szak</th>
                 </tr>
 
-                <!-- végigmegyünk minden ora elemeken -->
                 <xsl:for-each select="LD_orarend/ora">
                     <tr>
                         <td><xsl:value-of select="@id"/></td>
